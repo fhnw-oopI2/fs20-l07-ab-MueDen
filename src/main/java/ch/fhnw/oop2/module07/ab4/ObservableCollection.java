@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ToolBar;
 import javafx.scene.layout.VBox;
+import java.util.List;
 
 final class ObservableCollection extends VBox {
 	
@@ -27,7 +28,9 @@ final class ObservableCollection extends VBox {
 		
 		shuffle = new Button("Shuffle");
 		toolBar = new ToolBar(shuffle);
-		
+		shuffle.setOnAction(event -> {
+			FXCollections.shuffle(observableList);
+		});
 		listView = new ListView<>(observableList);	
 	}
 	
